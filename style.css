@@ -1,74 +1,156 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexões Campo-Cidade</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Indie+Flower&family=Handlee&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="main-header">
-        <h1 class="logo">conexões</h1>
-        <h2 class="subtitle">campo-cidade</h2>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#">🏠 INÍCIO</a></li>
-                <li><a href="#">SOBRE</a></li>
-                <li><a href="#">✉️ CONTATOS</a></li>
-            </ul>
-        </nav>
-    </header>
+body {
+    font-family: 'Handlee', cursive; /* A fonte mais próxima do estilo manuscrito */
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f8f8; /* Cor de fundo clara para simular a folha */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
 
-    <main class="content-wrapper">
-        <section class="slogan-section">
-            <p>Unindo Saberes, Sabores e Culturas</p>
-        </section>
+.main-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        <section class="illustration-section">
-            <div class="stall">
-                <img src="feira.png" alt="Banca de feira">
-            </div>
-            <div class="cart">
-                <img src="https://via.placeholder.com/150x100?text=Carrinho" alt="Carrinho de feira">
-            </div>
-            <div class="stall">
-                <img src="https://via.placeholder.com/150x100?text=Feira" alt="Outra banca de feira">
-            </div>
-        </section>
+/* Estilo para a imagem do logo */
+.logo-img {
+    max-width: 250px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto;
+    margin-bottom: -15px; /* Ajuste para aproximar do subtítulo */
+}
 
-        <section class="sections-container">
-            <div class="section-box quem-somos">
-                <h3>Quem Somos?</h3>
-                <p>Somos uma iniciativa que busca fortalecer os laços entre o campo e a cidade, incentivando o consumo consciente, promovendo o desenvolvimento sustentável.</p>
-            </div>
+.subtitle {
+    font-family: 'Indie Flower', cursive; /* Fonte para "campo-cidade" */
+    font-size: 1.5em;
+    color: #555;
+    margin-top: 0;
+}
 
-            <div class="section-box nossos-projetos">
-                <h3>Nossos Projetos</h3>
-                <ul>
-                    <li><strong>Feiras solidárias:</strong> onde o produtor conhece quem consome.</li>
-                    <li><strong>Educação do campo à cidade:</strong> oficinas, palestras e vivências educativas.</li>
-                    <li><strong>Circuitos culturais:</strong> eventos e mostras que celebram a cultura rural.</li>
-                    <li><strong>Agroecologia nas escolas:</strong> hortas escolares com o apoio de agricultores locais.</li>
-                </ul>
-            </div>
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
-            <div class="section-box historias-inspiram">
-                <h3>Histórias que Inspiram</h3>
-                <div class="story-item">
-                    <h4>Para Lucia:</h4>
-                    <p>Agricultora familiar que agora fornece para escolas na cidade.</p>
-                </div>
-                <div class="story-item">
-                    <h4>Pedro:</h4>
-                    <p>Jovem urbano que aprende a plantar com a avó no interior.</p>
-                </div>
-                <div class="story-item">
-                    <h4>Cozinha Viva:</h4>
-                    <p>Grupo que transforma alimentos do campo em refeições solidárias para pessoas em situação de vulnerabilidade.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
-</html>
+.main-nav a {
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 900px; /* Largura máxima do "papel" */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.slogan-section {
+    text-align: center;
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    color: #444;
+}
+
+.illustration-section {
+    display: flex;
+    justify-content: center; /* Centraliza a imagem principal */
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ccc; /* Linha tracejada abaixo da ilustração */
+}
+
+.main-illustration {
+    max-width: 100%; /* Garante que a imagem não transborde */
+    height: auto;
+    display: block; /* Remove o espaço extra abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem se ela for menor que o max-width */
+}
+
+/* As classes .stall e .cart foram removidas pois agora usamos apenas uma imagem principal */
+
+
+.sections-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .sections-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .historias-inspiram {
+        grid-column: span 2; /* Faz com que "Histórias que Inspiram" ocupe duas colunas em telas maiores */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .story-item {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+
+
+.section-box {
+    border: 1px solid #ccc; /* Borda para simular as caixas do lapbook */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.section-box h3 {
+    font-family: 'Indie Flower', cursive; /* Fonte para títulos de seção */
+    font-size: 1.8em;
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ccc; /* Linha tracejada abaixo do título */
+    padding-bottom: 5px;
+}
+
+.section-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-box ul li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.section-box strong {
+    color: #444;
+}
+
+.historias-inspiram .story-item {
+    border: 1px dashed #bbb;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #effaff;
+    margin-bottom: 15px; /* Espaço entre os itens da história em telas menores */
+}
+
+.historias-inspiram .story-item h4 {
+    font-family: 'Handlee', cursive;
+    font-size: 1.3em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.historias-inspiram .story-item p {
+    font-size: 0.95em;
+    line-height: 1.3;
+}
