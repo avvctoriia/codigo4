@@ -1,166 +1,240 @@
-body {
-    font-family: 'Handlee', cursive;
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@400;700&display=swap');
+
+/* Reset básico */
+* {
     margin: 0;
-    padding: 20px;
-    background-color: #f8f8f8;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.main-header {
-    margin-bottom: 30px;
-    width: 100%; /* O cabeçalho deve ocupar a largura total para o layout */
-    max-width: 900px; /* Alinha com a largura do content-wrapper */
-}
-
-/* Novo layout para o cabeçalho: logo e nav em extremidades opostas */
-.main-header.new-layout {
-    display: flex;
-    justify-content: space-between; /* Empurra logo para esquerda e nav para direita */
-    align-items: center; /* Alinha verticalmente os itens */
-    padding: 10px 0; /* Adiciona um pouco de padding vertical */
-}
-
-.logo-area {
-    display: flex;
-    align-items: center; /* Alinha a imagem do logo e o subtítulo verticalmente */
-    gap: 10px; /* Espaço entre a logo e o subtítulo */
-}
-
-.logo-img {
-    max-width: 180px; /* Ajuste o tamanho da logo para ser grande */
-    height: auto;
-    /* margin-bottom foi removido para alinhar melhor com o subtitle */
-}
-
-.subtitle {
-    font-family: 'Indie Flower', cursive;
-    font-size: 1.5em;
-    color: #555;
-    margin: 0; /* Remove margens padrão para alinhar com a logo */
-}
-
-.main-nav ul {
-    list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: flex-end; /* Garante que os itens de nav fiquem à direita */
-    gap: 20px;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #666;
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-.content-wrapper {
-    width: 100%;
-    max-width: 900px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 30px;
     box-sizing: border-box;
 }
 
-.slogan-section {
-    text-align: center;
-    font-size: 1.6em;
-    margin-bottom: 40px;
-    color: #444;
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-.illustration-section {
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    position: relative; /* Para posicionar a navegação */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: #4a90e2; /* Cor azul inspirada na imagem */
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+header .subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex; /* Para alinhar os itens da navegação horizontalmente */
+    justify-content: center; /* Centraliza os itens */
+    gap: 20px; /* Espaço entre os itens */
+}
+
+header nav ul li a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    color: #4a90e2;
+    border-bottom: 2px solid #4a90e2;
+}
+
+/* Seções de Conteúdo */
+main {
+    padding: 20px 0;
+}
+
+.hero-section {
+    background-color: #e6f2ff; /* Um azul bem claro para a seção de herói */
+    text-align: center;
+    padding: 50px 0;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.hero-section h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.illustrations {
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px dashed #ccc;
+    gap: 40px;
+    margin-top: 30px;
 }
 
-.main-illustration {
-    max-width: 100%;
+.illustration-item {
+    width: 150px; /* Tamanho ajustável para as ilustrações */
     height: auto;
-    display: block;
-    margin: 0 auto;
+    border-radius: 8px; /* Para as imagens que você substituirá */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.sections-container {
+/* Placeholder para as imagens das ilustrações */
+/* Você deve substituir `placeholder_feira1.png`, `placeholder_carrinho.png`, `placeholder_feira2.png` por suas próprias imagens */
+.illustration-item[alt="Ilustração de barraca de feira"] {
+    background-color: #a7d9b9; /* Cor para o placeholder */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    color: #fff;
+    border: 1px dashed #6c9a7d;
+}
+.illustration-item[alt="Ilustração de carrinho de feira"] {
+    background-color: #f7d58c; /* Cor para o placeholder */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    color: #fff;
+    border: 1px dashed #d6b25f;
+}
+
+
+.section-content {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.section-content h3 {
+    font-size: 2em;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.section-content h4 {
+    font-size: 1.4em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.section-content p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Grid para projetos e histórias */
+.projects-grid, .stories-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
 }
 
-@media (min-width: 768px) {
-    .sections-container {
-        grid-template-columns: 1fr 1fr;
+.project-item, .story-item {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: 5px solid #4a90e2;
+}
+
+.project-item h4, .story-item h4 {
+    color: #4a90e2;
+    margin-bottom: 8px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid #555;
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
     }
-    .historias-inspiram {
-        grid-column: span 2;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    header .logo {
+        font-size: 2.5em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    .illustrations {
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
     }
-    .story-item {
-        border-bottom: none;
-        padding-bottom: 0;
+
+    .illustration-item {
+        width: 120px;
+    }
+
+    .projects-grid, .stories-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-.section-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #fdfdfd;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-}
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 2em;
+    }
 
-.section-box h3 {
-    font-family: 'Indie Flower', cursive;
-    font-size: 1.8em;
-    color: #007bff;
-    margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: 1px dashed #ccc;
-    padding-bottom: 5px;
-}
+    header .subtitle {
+        font-size: 1em;
+    }
 
-.section-box ul {
-    list-style: none;
-    padding: 0;
-}
+    .section-content h3 {
+        font-size: 1.8em;
+    }
 
-.section-box ul li {
-    margin-bottom: 10px;
-    line-height: 1.4;
-}
-
-.section-box strong {
-    color: #444;
-}
-
-.historias-inspiram .story-item {
-    border: 1px dashed #bbb;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: #effaff;
-    margin-bottom: 15px;
-}
-
-.historias-inspiram .story-item h4 {
-    font-family: 'Handlee', cursive;
-    font-size: 1.3em;
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.historias-inspiram .story-item p {
-    font-size: 0.95em;
-    line-height: 1.3;
+    .section-content p {
+        font-size: 1em;
+    }
 }
