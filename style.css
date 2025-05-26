@@ -1,240 +1,228 @@
-/* Importação de fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@400;700&display=swap');
-
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --cor-de-fundo: #f8f8f8; /* Um branco levemente acinzentado para o fundo */
+  --cor-azul-titulo: #1a47c4; /* Azul para títulos */
+  --cor-verde-menu: #16df6a; /* Verde para itens de menu e alguns títulos de histórias */
+  --cor-texto-preto: #333; /* Cor padrão para o texto */
+  --cor-caixa-borda: #44be7b; /* Um verde mais vibrante para as bordas das caixas */
+  --cor-caixa-fundo: #e0ffe0; /* Um verde claro para o fundo das caixas */
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  margin: 0;
+  font-family: 'Handlee', cursive; /* Fonte que simula escrita à mão para o corpo */
+  line-height: 1.6;
+  color: var(--cor-texto-preto);
+  background-color: var(--cor-de-fundo);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.container {
-    width: 80%;
-    max-width: 1100px;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-/* Cabeçalho */
 header {
-    background-color: #fff;
-    color: #333;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-    position: relative; /* Para posicionar a navegação */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Organiza os itens em coluna para mobile primeiro */
+  align-items: center;
+  border-bottom: 2px solid var(--cor-azul-titulo);
 }
 
-header .logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 3em;
-    color: #4a90e2; /* Cor azul inspirada na imagem */
-    margin-bottom: 5px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Espaço entre o logo/subtítulo e o menu */
 }
 
-header .subtitle {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 15px;
+.imglogo {
+  max-width: 250px; /* Ajuste o tamanho conforme sua imagem 'logomaior.png' */
+  height: auto;
+  /* Se 'logomaior.png' já for o texto "conexões" estilizado, não precisa de bordas */
+  /* Se for uma logo com fundo, você pode querer adicionar box-shadow, mas para o estilo desenhado, talvez não */
 }
 
-header nav ul {
-    list-style: none;
-    display: flex; /* Para alinhar os itens da navegação horizontalmente */
-    justify-content: center; /* Centraliza os itens */
-    gap: 20px; /* Espaço entre os itens */
+.subtitle-header {
+  font-family: 'Handlee', cursive; /* Fonte para "campo-cidade" */
+  font-size: 1.8em;
+  color: var(--cor-texto-preto);
+  margin-top: 5px;
 }
 
-header nav ul li a {
-    color: #555;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 5px 10px;
-    transition: color 0.3s ease-in-out;
+nav .menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* Permite que o menu quebre linha em telas menores */
+  justify-content: center;
 }
 
-header nav ul li a:hover {
-    color: #4a90e2;
-    border-bottom: 2px solid #4a90e2;
+.menu li a {
+  color: var(--cor-verde-menu);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+  border-bottom: 2px dashed transparent;
+  padding-bottom: 3px;
 }
 
-/* Seções de Conteúdo */
+.menu li a:hover {
+  color: #0d8a43; /* Um verde ligeiramente mais escuro no hover */
+  border-bottom: 2px dashed #0d8a43;
+}
+
 main {
-    padding: 20px 0;
+  flex-grow: 1;
+  padding: 20px;
 }
 
-.hero-section {
-    background-color: #e6f2ff; /* Um azul bem claro para a seção de herói */
-    text-align: center;
-    padding: 50px 0;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.tagline {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.hero-section h2 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 30px;
+.tagline h3 {
+  font-family: 'Handlee', cursive;
+  font-size: 1.8em;
+  color: var(--cor-texto-preto);
+  background-color: #ffe8d6;
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
 }
 
-.illustrations {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 30px;
+.illustration-feira {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.illustration-item {
-    width: 150px; /* Tamanho ajustável para as ilustrações */
-    height: auto;
-    border-radius: 8px; /* Para as imagens que você substituirá */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.feira-img {
+  max-width: 90%; /* Aumenta um pouco para se destacar */
+  height: auto;
+  border: 3px dashed var(--cor-caixa-borda);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+  display: block; /* Garante que a imagem não tenha espaço extra abaixo dela */
+  margin: 0 auto; /* Centraliza a imagem */
 }
 
-/* Placeholder para as imagens das ilustrações */
-/* Você deve substituir `placeholder_feira1.png`, `placeholder_carrinho.png`, `placeholder_feira2.png` por suas próprias imagens */
-.illustration-item[alt="Ilustração de barraca de feira"] {
-    background-color: #a7d9b9; /* Cor para o placeholder */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.8em;
-    color: #fff;
-    border: 1px dashed #6c9a7d;
-}
-.illustration-item[alt="Ilustração de carrinho de feira"] {
-    background-color: #f7d58c; /* Cor para o placeholder */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.8em;
-    color: #fff;
-    border: 1px dashed #d6b25f;
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Coluna única para telas pequenas */
+  gap: 30px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
 }
 
+/* Media queries para layout responsivo */
+@media (min-width: 768px) {
+  header {
+    flex-direction: row; /* Volta a organizar lado a lado em telas maiores */
+    justify-content: space-between; /* Espaça logo/subtítulo e menu */
+  }
 
-.section-content {
-    background-color: #fff;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  .logo-area {
+    margin-bottom: 0;
+  }
+
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas para telas médias */
+  }
 }
 
-.section-content h3 {
-    font-size: 2em;
-    color: #4a90e2;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+@media (min-width: 1024px) {
+  .content-grid {
+    grid-template-columns: repeat(3, 1fr); /* Três colunas para telas grandes */
+  }
 }
 
-.section-content h4 {
-    font-size: 1.4em;
-    color: #555;
-    margin-bottom: 10px;
+.quem-somos-box,
+.nossos-projetos-box,
+.historias-box {
+  background-color: var(--cor-caixa-fundo);
+  border: 2px solid var(--cor-caixa-borda);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
-.section-content p {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 15px;
+.quem-somos-box:hover,
+.nossos-projetos-box:hover,
+.historias-box:hover {
+  transform: translateY(-5px);
 }
 
-/* Grid para projetos e histórias */
-.projects-grid, .stories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
+.quem-somos-box h4,
+.nossos-projetos-box h4,
+.historias-box h4 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.7em;
+  color: var(--cor-azul-titulo);
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.project-item, .story-item {
-    background-color: #f9f9f9;
-    padding: 25px;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    border-left: 5px solid #4a90e2;
+.quem-somos-box p,
+.nossos-projetos-box ul,
+.historias-box .historia-item p {
+  font-family: 'Handlee', cursive;
+  font-size: 1.1em;
+  line-height: 1.8;
 }
 
-.project-item h4, .story-item h4 {
-    color: #4a90e2;
-    margin-bottom: 8px;
+.nossos-projetos-box ul {
+  list-style: none;
+  padding-left: 0;
 }
 
-/* Rodapé */
+.nossos-projetos-box li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.nossos-projetos-box li::before {
+  content: '🌱'; /* Ícone de folha para os itens da lista */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
+}
+
+.historias-box .historia-item {
+  margin-bottom: 20px;
+  border-bottom: 1px dashed var(--cor-caixa-borda);
+  padding-bottom: 15px;
+}
+
+.historias-box .historia-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.historias-box .historia-item h5 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.3em;
+  color: var(--cor-verde-menu);
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 30px;
-    border-top: 1px solid #555;
-}
-
-footer p {
-    font-size: 0.9em;
-}
-
-/* Responsividade básica */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    header .logo {
-        font-size: 2.5em;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero-section h2 {
-        font-size: 2em;
-    }
-
-    .illustrations {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .illustration-item {
-        width: 120px;
-    }
-
-    .projects-grid, .stories-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    header .logo {
-        font-size: 2em;
-    }
-
-    header .subtitle {
-        font-size: 1em;
-    }
-
-    .section-content h3 {
-        font-size: 1.8em;
-    }
-
-    .section-content p {
-        font-size: 1em;
-    }
+  background-color: var(--cor-azul-titulo);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9em;
 }
