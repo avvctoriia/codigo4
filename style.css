@@ -1,46 +1,199 @@
-:root{
+:root {
   --cor-de-fundo: #52ec0a;
-  --cor-de-texto:#000000;
-  --cor-texto-dois:#44be7b;
+  --cor-de-texto: #000000;
+  --cor-texto-dois: #44be7b;
   --azul-logo: #1a47c4; /* Definindo uma variável para o azul da logo */
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif; /* Usando uma fonte mais comum */
   line-height: 1.6;
   color: #333;
 }
 
 header {
   background-color: #ffffff;
-  color: #16df6a;
-  padding: 10px 20px;
+  padding: 15px 20px; /* Mais padding para um cabeçalho mais "arejado" */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  min-height: 120px; /* Definindo uma altura mínima para o cabeçalho */
+  flex-direction: column; /* Organiza logo e navegação em coluna */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente se houver espaço */
+  min-height: 140px; /* Altura mínima ajustada para a logo maior */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil para destaque */
 }
 
 .logo-titulo {
   display: flex;
-  align-items: center;
-  /* Removido gap: 30px; se não houver outros itens na logo-titulo */
-  width: 100%; /* Permite que a logo-titulo ocupe a largura total para centralização */
+  justify-content: center; /* Centraliza a logo horizontalmente */
+  width: 100%; /* Ocupa a largura total para centralizar */
+  margin-bottom: 10px; /* Espaçamento entre a logo e o menu */
 }
 
 .logo-titulo img {
-  max-height: 100px; /* A logo ocupará no máximo 100px de altura */
-  width: auto; /* Mantém a proporção da imagem */
+  max-height: 120px; /* Altura máxima da logo (ajuste conforme necessário) */
+  width: auto; /* Mantém a proporção */
   border-radius: 50%;
-  margin-left: auto; /* Centraliza a logo no header */
-  margin-right: auto; /* Centraliza a logo no header */
-  display: block; /* Garante que as margens automáticas funcionem */
+  display: block; /* Garante que as margens automáticas funcionem se usadas */
+  object-fit: contain; /* Garante que a imagem inteira seja visível dentro da área */
 }
 
-/* Ajuste para o menu de navegação para não atrapalhar a centralização da logo se estiver em linha com ela */
 nav {
-  width: 100%; /* Ocupa a largura total para centralizar o menu abaixo da logo */
-  text-align: center; /* Centraliza o menu horizontalmente */
-  margin-top: 10px; /* Espaçamento entre a logo e o menu
+  width: 100%; /* Ocupa a largura total para centralizar o menu */
+}
+
+nav .menu {
+  list-style: none;
+  display: flex;
+  gap: 25px; /* Mais espaçamento entre os itens do menu */
+  margin: 0;
+  padding: 0;
+  justify-content: center; /* Centraliza os itens do menu */
+}
+
+.menu li a {
+  color: var(--azul-logo);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em; /* Fonte do menu um pouco maior */
+  transition: color 0.3s ease, transform 0.2s ease; /* Efeito ao passar o mouse */
+}
+
+.menu li a:hover {
+  color: #087c21;
+  transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+
+.titulo {
+  background-color: #ffffff;
+  padding: 80px 20px; /* Mais padding para o título principal */
+  text-align: center;
+}
+
+.titulo h2 {
+  color: var(--azul-logo);
+  font-size: 3em; /* Título principal ainda maior */
+  margin: 0; /* Remove margem padrão */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Sombra leve para destaque */
+}
+
+.banner-principal img {
+  width: 100%;
+  display: block;
+  height: auto; /* Garante que a imagem não distorça */
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px; /* Mais padding para as seções de conteúdo */
+  gap: 30px; /* Mais espaçamento entre os elementos da seção */
+  background-color: #f8f8f8; /* Cor de fundo leve para as seções de conteúdo */
+  margin-bottom: 20px; /* Espaçamento entre as seções */
+}
+
+.conteudo:nth-child(even) { /* Aplica estilo diferente para seções pares */
+    background-color: #ffffff;
+}
+
+.texto {
+  width: 90%; /* Ocupa mais largura para melhor leitura */
+  max-width: 800px; /* Limita a largura máxima para readability */
+  text-align: center;
+}
+
+.texto h3 {
+  color: var(--azul-logo);
+  font-size: 2.5em; /* Títulos das seções maiores */
+  margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.texto p {
+    font-size: 1.1em; /* Texto do parágrafo um pouco maior */
+    line-height: 1.8; /* Melhor espaçamento entre linhas */
+}
+
+.texto ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 700px; /* Aumenta a largura da lista */
+  margin: 0 auto;
+}
+
+.texto ul li {
+  margin-bottom: 12px; /* Mais espaçamento entre os itens da lista */
+  padding-left: 30px; /* Mais espaço para o marcador personalizado */
+  position: relative;
+  font-size: 1.2em; /* Tópicos maiores */
+}
+
+.texto ul li::before {
+  content: '🌱'; /* Um ícone mais amigável como marcador */
+  color: var(--azul-logo);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.5em; /* Ajusta a posição do ícone */
+  position: absolute;
+  left: 0;
+  font-size: 1.1em; /* Tamanho do ícone */
+}
+
+
+.seis-imagens {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #ffffff; /* Fundo branco para a seção */
+}
+
+.seis-imagens h2 {
+  color: var(--azul-logo);
+  font-size: 2.5em; /* Título "Histórias que Inspiram" maior */
+  margin-bottom: 40px; /* Mais espaçamento abaixo do título */
+}
+
+.grid-destaques {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Mais espaçamento entre os itens */
+  justify-content: center;
+}
+
+.grid-destaques .item {
+  text-align: center;
+  width: 250px; /* Aumenta a largura dos cartões de história */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para os cartões */
+  background-color: #fff;
+  transition: transform 0.3s ease; /* Efeito ao passar o mouse */
+}
+
+.grid-destaques .item:hover {
+    transform: translateY(-5px); /* Elevação no hover */
+}
+
+.grid-destaques img {
+  width: 100%;
+  height: 150px; /* Altura fixa para as imagens dos destaques */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.grid-destaques p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #555;
+}
+
+footer {
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  padding: 25px; /* Mais padding no footer */
+  margin-top: 40px; /* Espaçamento antes do footer */
+}
