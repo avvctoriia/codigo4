@@ -1,8 +1,8 @@
 body {
-    font-family: 'Handlee', cursive; /* A fonte mais próxima do estilo manuscrito */
+    font-family: 'Handlee', cursive;
     margin: 0;
     padding: 20px;
-    background-color: #f8f8f8; /* Cor de fundo clara para simular a folha */
+    background-color: #f8f8f8;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -11,29 +11,43 @@ body {
 }
 
 .main-header {
-    text-align: center;
     margin-bottom: 30px;
+    width: 100%; /* O cabeçalho deve ocupar a largura total para o layout */
+    max-width: 900px; /* Alinha com a largura do content-wrapper */
 }
 
-/* Estilo para a imagem do logo */
+/* Novo layout para o cabeçalho: logo e nav em extremidades opostas */
+.main-header.new-layout {
+    display: flex;
+    justify-content: space-between; /* Empurra logo para esquerda e nav para direita */
+    align-items: center; /* Alinha verticalmente os itens */
+    padding: 10px 0; /* Adiciona um pouco de padding vertical */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center; /* Alinha a imagem do logo e o subtítulo verticalmente */
+    gap: 10px; /* Espaço entre a logo e o subtítulo */
+}
+
 .logo-img {
-    max-width: 250px; /* Ajuste o tamanho da logo conforme necessário */
+    max-width: 180px; /* Ajuste o tamanho da logo para ser grande */
     height: auto;
-    margin-bottom: -15px; /* Ajuste para aproximar do subtítulo */
+    /* margin-bottom foi removido para alinhar melhor com o subtitle */
 }
 
 .subtitle {
-    font-family: 'Indie Flower', cursive; /* Fonte para "campo-cidade" */
+    font-family: 'Indie Flower', cursive;
     font-size: 1.5em;
     color: #555;
-    margin-top: 0;
+    margin: 0; /* Remove margens padrão para alinhar com a logo */
 }
 
 .main-nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Garante que os itens de nav fiquem à direita */
     gap: 20px;
 }
 
@@ -46,7 +60,7 @@ body {
 
 .content-wrapper {
     width: 100%;
-    max-width: 900px; /* Largura máxima do "papel" */
+    max-width: 900px;
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -63,21 +77,18 @@ body {
 
 .illustration-section {
     display: flex;
-    justify-content: center; /* Centraliza a imagem principal */
+    justify-content: center;
     margin-bottom: 40px;
     padding-bottom: 20px;
-    border-bottom: 1px dashed #ccc; /* Linha tracejada abaixo da ilustração */
+    border-bottom: 1px dashed #ccc;
 }
 
 .main-illustration {
-    max-width: 100%; /* Garante que a imagem não transborde */
+    max-width: 100%;
     height: auto;
-    display: block; /* Remove o espaço extra abaixo da imagem */
-    margin: 0 auto; /* Centraliza a imagem se ela for menor que o max-width */
+    display: block;
+    margin: 0 auto;
 }
-
-/* As classes .stall e .cart foram removidas pois agora usamos apenas uma imagem principal */
-
 
 .sections-container {
     display: grid;
@@ -90,7 +101,7 @@ body {
         grid-template-columns: 1fr 1fr;
     }
     .historias-inspiram {
-        grid-column: span 2; /* Faz com que "Histórias que Inspiram" ocupe duas colunas em telas maiores */
+        grid-column: span 2;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
@@ -101,9 +112,8 @@ body {
     }
 }
 
-
 .section-box {
-    border: 1px solid #ccc; /* Borda para simular as caixas do lapbook */
+    border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
     background-color: #fdfdfd;
@@ -111,12 +121,12 @@ body {
 }
 
 .section-box h3 {
-    font-family: 'Indie Flower', cursive; /* Fonte para títulos de seção */
+    font-family: 'Indie Flower', cursive;
     font-size: 1.8em;
     color: #007bff;
     margin-top: 0;
     margin-bottom: 15px;
-    border-bottom: 1px dashed #ccc; /* Linha tracejada abaixo do título */
+    border-bottom: 1px dashed #ccc;
     padding-bottom: 5px;
 }
 
@@ -139,7 +149,7 @@ body {
     padding: 15px;
     border-radius: 5px;
     background-color: #effaff;
-    margin-bottom: 15px; /* Espaço entre os itens da história em telas menores */
+    margin-bottom: 15px;
 }
 
 .historias-inspiram .story-item h4 {
