@@ -2,6 +2,7 @@
   --cor-de-fundo: #52ec0a;
   --cor-de-texto:#000000;
   --cor-texto-dois:#44be7b;
+  --azul-logo: #1a47c4; /* Definindo uma variável para o azul da logo */
 }
 
 body {
@@ -28,12 +29,14 @@ header {
 }
 
 .logo-titulo img {
-  width: 300%;
-  height: 300%;
+  width: 150px; /* Aumentado o tamanho da logo */
+  height: 150px; /* Aumentado o tamanho da logo */
   border-radius: 50%;
 }
 .imglogo{
-  margin-left: 600px;
+  margin-left: auto; /* Centraliza a logo no header */
+  margin-right: auto; /* Centraliza a logo no header */
+  display: block; /* Garante que as margens automáticas funcionem */
 }
 nav .menu {
   list-style: none;
@@ -44,10 +47,11 @@ nav .menu {
 }
 
 .menu li a {
-  color: #1a47c4;
+  color: var(--azul-logo); /* Usando a variável para a cor da logo */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
+  font-size: 1.1em; /* Fonte um pouco maior para os itens do menu */
 }
 
 .menu li a:hover {
@@ -61,6 +65,11 @@ nav .menu {
   text-align: center;
 }
 
+.titulo h2 {
+  color: var(--azul-logo); /* Cor do título principal igual ao da logo */
+  font-size: 2.5em; /* Aumenta o tamanho da fonte do título principal */
+}
+
 .banner-principal img {
   width: 100%;
   display: block;
@@ -68,40 +77,44 @@ nav .menu {
 
 .conteudo {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Para que os tópicos fiquem um abaixo do outro em telas menores */
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
   padding: 40px 20px;
   gap: 20px;
 }
 
 .conteudo.invertido {
-  flex-direction: row-reverse;
+  flex-direction: column; /* Mantém a direção da coluna mesmo que "invertido" seja aplicado */
 }
 
-/* Removido o estilo .conteudo img, pois as imagens foram removidas do HTML dessas seções */
-/* .conteudo img {
-  width: 40%;
-  height: auto;
-  border-radius: 8px;
-} */
-
 .texto {
-  width: 100%; /* Ocupa a largura total já que não há imagem ao lado */
+  width: 80%; /* Ajusta a largura para centralizar melhor */
+  text-align: center; /* Centraliza o texto dentro da div */
+}
+
+.texto h3 {
+  color: var(--azul-logo); /* Cor dos títulos das seções igual ao da logo */
+  font-size: 2em; /* Aumenta o tamanho da fonte dos títulos das seções */
 }
 
 .texto ul {
   list-style: none; /* Remove os marcadores padrão da lista */
   padding: 0;
+  text-align: left; /* Alinha o texto dos tópicos à esquerda */
+  max-width: 600px; /* Limita a largura dos tópicos para não ficarem muito extensos */
+  margin: 0 auto; /* Centraliza a lista de tópicos */
 }
 
 .texto ul li {
   margin-bottom: 10px; /* Espaçamento entre os itens da lista */
   padding-left: 20px; /* Espaço para o marcador personalizado */
   position: relative;
+  font-size: 1.1em; /* Fonte um pouco maior para os tópicos */
 }
 
 .texto ul li::before {
   content: '•'; /* Marcador de lista personalizado */
-  color: #1a47c4; /* Cor do marcador */
+  color: var(--azul-logo); /* Cor do marcador da lista igual ao da logo */
   font-weight: bold;
   display: inline-block;
   width: 1em;
@@ -111,23 +124,14 @@ nav .menu {
 }
 
 
-/* Removido o estilo da galeria de imagens */
-/* .galeria {
-  padding: 40px 20px;
-  text-align: center;
-  background: #f9f9f9;
-}
-
-.grid-galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-} */
-
 .seis-imagens {
   padding: 40px 20px;
   text-align: center;
+}
+
+.seis-imagens h2 {
+  color: var(--azul-logo); /* Cor do título "Histórias que Inspiram" igual ao da logo */
+  font-size: 2em; /* Aumenta o tamanho da fonte */
 }
 
 .grid-destaques {
@@ -139,11 +143,12 @@ nav .menu {
 
 .grid-destaques .item {
   text-align: center;
-  width: 150px;
+  width: 200px; /* Aumenta a largura dos itens das histórias */
 }
 
 .grid-destaques img {
   width: 100%;
+  height: auto; /* Mantém a proporção da imagem */
   border-radius: 8px;
 }
 
