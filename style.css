@@ -77,14 +77,15 @@ nav .menu {
   flex-direction: row-reverse;
 }
 
-.conteudo img {
+/* Removido o estilo .conteudo img, pois as imagens foram removidas do HTML dessas seções */
+/* .conteudo img {
   width: 40%;
   height: auto;
   border-radius: 8px;
-}
+} */
 
 .texto {
-  width: 60%;
+  width: 100%; /* Ocupa a largura total já que não há imagem ao lado */
 }
 
 .texto ul {
@@ -110,7 +111,8 @@ nav .menu {
 }
 
 
-.galeria {
+/* Removido o estilo da galeria de imagens */
+/* .galeria {
   padding: 40px 20px;
   text-align: center;
   background: #f9f9f9;
@@ -121,7 +123,7 @@ nav .menu {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   margin-top: 20px;
-}
+} */
 
 .seis-imagens {
   padding: 40px 20px;
