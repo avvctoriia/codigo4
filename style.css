@@ -20,141 +20,27 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  min-height: 120px; /* Definindo uma altura mínima para o cabeçalho */
 }
 
 .logo-titulo {
   display: flex;
   align-items: center;
-  gap: 30px;
+  /* Removido gap: 30px; se não houver outros itens na logo-titulo */
+  width: 100%; /* Permite que a logo-titulo ocupe a largura total para centralização */
 }
 
 .logo-titulo img {
-  width: 600px; /* Aumentado ainda mais o tamanho da logo */
-  height: 600px; /* Aumentado ainda mais o tamanho da logo */
+  max-height: 100px; /* A logo ocupará no máximo 100px de altura */
+  width: auto; /* Mantém a proporção da imagem */
   border-radius: 50%;
-}
-.imglogo{
   margin-left: auto; /* Centraliza a logo no header */
   margin-right: auto; /* Centraliza a logo no header */
   display: block; /* Garante que as margens automáticas funcionem */
 }
-nav .menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
 
-.menu li a {
-  color: var(--azul-logo); /* Usando a variável para a cor da logo */
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  font-size: 1.1em; /* Fonte um pouco maior para os itens do menu */
-}
-
-.menu li a:hover {
-  color: #087c21;
-}
-
-
-.titulo {
-  background-color: #ffffff;
-  padding: 70px;
-  text-align: center;
-}
-
-.titulo h2 {
-  color: var(--azul-logo); /* Cor do título principal igual ao da logo */
-  font-size: 2.5em; /* Aumenta o tamanho da fonte do título principal */
-}
-
-.banner-principal img {
-  width: 100%;
-  display: block;
-}
-
-.conteudo {
-  display: flex;
-  flex-direction: column; /* Para que os tópicos fiquem um abaixo do outro em telas menores */
-  align-items: center; /* Centraliza o conteúdo horizontalmente */
-  padding: 40px 20px;
-  gap: 20px;
-}
-
-.conteudo.invertido {
-  flex-direction: column; /* Mantém a direção da coluna mesmo que "invertido" seja aplicado */
-}
-
-.texto {
-  width: 80%; /* Ajusta a largura para centralizar melhor */
-  text-align: center; /* Centraliza o texto dentro da div */
-}
-
-.texto h3 {
-  color: var(--azul-logo); /* Cor dos títulos das seções igual ao da logo */
-  font-size: 2em; /* Aumenta o tamanho da fonte dos títulos das seções */
-}
-
-.texto ul {
-  list-style: none; /* Remove os marcadores padrão da lista */
-  padding: 0;
-  text-align: left; /* Alinha o texto dos tópicos à esquerda */
-  max-width: 600px; /* Limita a largura dos tópicos para não ficarem muito extensos */
-  margin: 0 auto; /* Centraliza a lista de tópicos */
-}
-
-.texto ul li {
-  margin-bottom: 10px; /* Espaçamento entre os itens da lista */
-  padding-left: 20px; /* Espaço para o marcador personalizado */
-  position: relative;
-  font-size: 1.1em; /* Fonte um pouco maior para os tópicos */
-}
-
-.texto ul li::before {
-  content: '•'; /* Marcador de lista personalizado */
-  color: var(--azul-logo); /* Cor do marcador da lista igual ao da logo */
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-  position: absolute;
-  left: 0;
-}
-
-
-.seis-imagens {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.seis-imagens h2 {
-  color: var(--azul-logo); /* Cor do título "Histórias que Inspiram" igual ao da logo */
-  font-size: 2em; /* Aumenta o tamanho da fonte */
-}
-
-.grid-destaques {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.grid-destaques .item {
-  text-align: center;
-  width: 200px; /* Aumenta a largura dos itens das histórias */
-}
-
-.grid-destaques img {
-  width: 100%;
-  height: auto; /* Mantém a proporção da imagem */
-  border-radius: 8px;
-}
-
-footer {
-  background-color: #444;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
+/* Ajuste para o menu de navegação para não atrapalhar a centralização da logo se estiver em linha com ela */
+nav {
+  width: 100%; /* Ocupa a largura total para centralizar o menu abaixo da logo */
+  text-align: center; /* Centraliza o menu horizontalmente */
+  margin-top: 10px; /* Espaçamento entre a logo e o menu
