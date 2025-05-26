@@ -31,7 +31,7 @@ header {
 }
 
 .logo-titulo img {
-  max-height: 120px; /* Altura máxima da logo (ajuste conforme necessário) */
+  max-height: 200px; /* Altura máxima da logo (ajuste conforme necessário) */
   width: auto; /* Mantém a proporção */
   border-radius: 50%;
   display: block; /* Garante que as margens automáticas funcionem se usadas */
