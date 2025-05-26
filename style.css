@@ -1,195 +1,171 @@
+/* Variáveis CSS para facilitar a manutenção das cores */
 :root {
   --cor-de-fundo: #f8f8f8; /* Um branco levemente acinzentado para o fundo */
-  --cor-azul-titulo: #1a47c4; /* Azul para títulos */
-  --cor-verde-menu: #16df6a; /* Verde para itens de menu e alguns títulos de histórias */
-  --cor-texto-preto: #333; /* Cor padrão para o texto */
-  --cor-caixa-borda: #44be7b; /* Um verde mais vibrante para as bordas das caixas */
-  --cor-caixa-fundo: #e0ffe0; /* Um verde claro para o fundo das caixas */
+  --cor-azul-principal: #1a47c4; /* Azul para títulos e elementos de destaque */
+  --cor-verde-destaque: #16df6a; /* Verde para itens de menu e alguns títulos */
+  --cor-texto-escuro: #333; /* Cor padrão para o texto */
+  --cor-borda-caixa: #44be7b; /* Um verde mais vibrante para as bordas das caixas de conteúdo */
+  --cor-fundo-caixa: #e0ffe0; /* Um verde claro para o fundo das caixas de conteúdo */
+  --cor-slogan-fundo: #ffe8d6; /* Um fundo suave para o slogan principal */
 }
 
+/* Estilos Globais e Reset Básico */
 body {
   margin: 0;
   font-family: 'Handlee', cursive; /* Fonte que simula escrita à mão para o corpo */
   line-height: 1.6;
-  color: var(--cor-texto-preto);
+  color: var(--cor-texto-escuro);
   background-color: var(--cor-de-fundo);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* Garante que o rodapé fique no final da página */
 }
 
-header {
+/* Estilo para o CABEÇALHO (site-header) */
+.site-header {
   background-color: #ffffff;
   padding: 20px;
   display: flex;
-  flex-direction: column; /* Organiza os itens em coluna para mobile primeiro */
+  flex-direction: column; /* Padrão para mobile: itens em coluna */
   align-items: center;
-  border-bottom: 2px solid var(--cor-azul-titulo);
+  border-bottom: 2px solid var(--cor-azul-principal); /* Borda inferior para separar */
 }
 
-.logo-area {
+.header-logo-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px; /* Espaço entre o logo/subtítulo e o menu */
+  margin-bottom: 20px; /* Espaçamento entre o logo/subtítulo e o menu */
 }
 
-.imglogo {
-  max-width: 250px; /* Ajuste o tamanho conforme sua imagem 'logomaior.png' */
+.header-logo {
+  max-width: 250px; /* Ajuste o tamanho da sua imagem 'logomaior.png' */
   height: auto;
-  /* Se 'logomaior.png' já for o texto "conexões" estilizado, não precisa de bordas */
-  /* Se for uma logo com fundo, você pode querer adicionar box-shadow, mas para o estilo desenhado, talvez não */
+  /* Se 'logomaior.png' já tem o estilo do "conexões", não precisa de mais estilização aqui */
 }
 
-.subtitle-header {
+.header-subtitle {
   font-family: 'Handlee', cursive; /* Fonte para "campo-cidade" */
   font-size: 1.8em;
-  color: var(--cor-texto-preto);
+  color: var(--cor-texto-escuro);
   margin-top: 5px;
 }
 
-nav .menu {
-  list-style: none;
+.main-nav .menu-list {
+  list-style: none; /* Remove marcadores da lista */
   display: flex;
-  gap: 30px;
+  gap: 30px; /* Espaçamento entre os itens do menu */
   margin: 0;
   padding: 0;
   flex-wrap: wrap; /* Permite que o menu quebre linha em telas menores */
-  justify-content: center;
+  justify-content: center; /* Centraliza itens em telas pequenas */
 }
 
-.menu li a {
-  color: var(--cor-verde-menu);
+.menu-list li a {
+  color: var(--cor-verde-destaque);
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1em;
-  transition: color 0.3s ease;
-  border-bottom: 2px dashed transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px dashed transparent; /* Para um efeito de sublinhado mais "desenhado" */
   padding-bottom: 3px;
 }
 
-.menu li a:hover {
+.menu-list li a:hover {
   color: #0d8a43; /* Um verde ligeiramente mais escuro no hover */
   border-bottom: 2px dashed #0d8a43;
 }
 
-main {
-  flex-grow: 1;
-  padding: 20px;
-}
-
-.tagline {
+/* Estilo para o TÍTULO PRINCIPAL / SLOGAN (main-slogan) */
+.main-slogan {
   text-align: center;
-  margin-bottom: 40px;
+  margin-top: 40px; /* Espaçamento do cabeçalho */
+  margin-bottom: 40px; /* Espaçamento da ilustração banner */
 }
 
-.tagline h3 {
-  font-family: 'Handlee', cursive;
-  font-size: 1.8em;
-  color: var(--cor-texto-preto);
-  background-color: #ffe8d6;
-  padding: 10px 20px;
-  border-radius: 20px;
-  display: inline-block;
-  box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+.main-slogan h2 {
+  font-family: 'Handlee', cursive; /* Fonte para o slogan */
+  font-size: 2.2em; /* Tamanho maior para o slogan */
+  color: var(--cor-texto-escuro);
+  background-color: var(--cor-slogan-fundo); /* Fundo colorido para o slogan */
+  padding: 10px 25px;
+  border-radius: 25px; /* Bordas arredondadas para o fundo */
+  display: inline-block; /* Para o background pegar apenas o texto */
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.1); /* Sombra suave */
 }
 
-.illustration-feira {
+/* Estilo para a IMAGEM BANNER / ILUSTRAÇÃO CENTRAL (banner-illustration) */
+.banner-illustration {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px; /* Espaçamento para as seções de conteúdo */
 }
 
-.feira-img {
-  max-width: 90%; /* Aumenta um pouco para se destacar */
+.banner-img {
+  max-width: 90%; /* Ajuste o tamanho da sua imagem 'feira2.png' */
   height: auto;
-  border: 3px dashed var(--cor-caixa-borda);
+  border: 3px dashed var(--cor-borda-caixa); /* Borda tracejada para simular desenho */
   border-radius: 10px;
-  padding: 10px;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
-  display: block; /* Garante que a imagem não tenha espaço extra abaixo dela */
+  padding: 10px; /* Espaçamento interno da borda */
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.15); /* Sombra para dar profundidade */
+  display: block; /* Remove espaço extra abaixo da imagem */
   margin: 0 auto; /* Centraliza a imagem */
 }
 
-.content-grid {
+/* Estilo para as SEÇÕES DE CONTEÚDO EM GRID (content-sections-grid) */
+.content-sections-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Coluna única para telas pequenas */
-  gap: 30px;
+  grid-template-columns: 1fr; /* Padrão para mobile: coluna única */
+  gap: 30px; /* Espaçamento entre as caixas de conteúdo */
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #f0f0f0; /* Fundo suave para a área de conteúdo */
   border-radius: 15px;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Sombra interna para dar profundidade */
+  max-width: 1200px; /* Limita a largura máxima do grid */
+  margin: 0 auto; /* Centraliza o grid na página */
 }
 
-/* Media queries para layout responsivo */
-@media (min-width: 768px) {
-  header {
-    flex-direction: row; /* Volta a organizar lado a lado em telas maiores */
-    justify-content: space-between; /* Espaça logo/subtítulo e menu */
-  }
-
-  .logo-area {
-    margin-bottom: 0;
-  }
-
-  .content-grid {
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas para telas médias */
-  }
-}
-
-@media (min-width: 1024px) {
-  .content-grid {
-    grid-template-columns: repeat(3, 1fr); /* Três colunas para telas grandes */
-  }
-}
-
-.quem-somos-box,
-.nossos-projetos-box,
-.historias-box {
-  background-color: var(--cor-caixa-fundo);
-  border: 2px solid var(--cor-caixa-borda);
+.section-box {
+  background-color: var(--cor-fundo-caixa);
+  border: 2px solid var(--cor-borda-caixa);
   border-radius: 10px;
   padding: 25px;
   box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out; /* Efeito suave no hover */
 }
 
-.quem-somos-box:hover,
-.nossos-projetos-box:hover,
-.historias-box:hover {
-  transform: translateY(-5px);
+.section-box:hover {
+  transform: translateY(-5px); /* Efeito de levantar a caixa no hover */
 }
 
-.quem-somos-box h4,
-.nossos-projetos-box h4,
-.historias-box h4 {
-  font-family: 'Pacifico', cursive;
+.section-box h3 {
+  font-family: 'Pacifico', cursive; /* Fonte para os títulos das seções */
   font-size: 1.7em;
-  color: var(--cor-azul-titulo);
+  color: var(--cor-azul-principal);
   margin-top: 0;
   margin-bottom: 15px;
   text-align: center;
 }
 
-.quem-somos-box p,
-.nossos-projetos-box ul,
-.historias-box .historia-item p {
+.section-box p,
+.section-box ul {
   font-family: 'Handlee', cursive;
   font-size: 1.1em;
   line-height: 1.8;
 }
 
-.nossos-projetos-box ul {
+/* Estilos específicos para a lista de projetos */
+.nossos-projetos ul {
   list-style: none;
   padding-left: 0;
 }
 
-.nossos-projetos-box li {
+.nossos-projetos li {
   margin-bottom: 10px;
   position: relative;
-  padding-left: 25px;
+  padding-left: 25px; /* Espaço para o ícone customizado */
 }
 
-.nossos-projetos-box li::before {
+.nossos-projetos li::before {
   content: '🌱'; /* Ícone de folha para os itens da lista */
   position: absolute;
   left: 0;
@@ -197,32 +173,56 @@ main {
   font-size: 1.2em;
 }
 
-.historias-box .historia-item {
+/* Estilos específicos para as histórias */
+.historias-inspiram .historia-item {
   margin-bottom: 20px;
-  border-bottom: 1px dashed var(--cor-caixa-borda);
+  border-bottom: 1px dashed var(--cor-borda-caixa); /* Linha divisória tracejada */
   padding-bottom: 15px;
 }
 
-.historias-box .historia-item:last-child {
-  border-bottom: none;
+.historias-inspiram .historia-item:last-child {
+  border-bottom: none; /* Remove a linha divisória do último item */
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.historias-box .historia-item h5 {
-  font-family: 'Pacifico', cursive;
+.historias-inspiram .historia-item h4 {
+  font-family: 'Pacifico', cursive; /* Fonte para os títulos das histórias */
   font-size: 1.3em;
-  color: var(--cor-verde-menu);
+  color: var(--cor-verde-destaque);
   margin-top: 0;
   margin-bottom: 5px;
 }
 
-footer {
-  background-color: var(--cor-azul-titulo);
+/* RODAPÉ (site-footer) */
+.site-footer {
+  background-color: var(--cor-azul-principal);
   color: #fff;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
-  font-family: Arial, sans-serif;
+  margin-top: 40px; /* Espaçamento do conteúdo */
+  font-family: Arial, sans-serif; /* Volta para uma fonte mais padrão no rodapé */
   font-size: 0.9em;
+}
+
+/* Media Queries para Responsividade */
+@media (min-width: 768px) {
+  .site-header {
+    flex-direction: row; /* Itens lado a lado em telas maiores */
+    justify-content: space-between; /* Espaça logo/subtítulo e menu */
+  }
+
+  .header-logo-container {
+    margin-bottom: 0; /* Remove margem inferior em telas maiores */
+  }
+
+  .content-sections-grid {
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas para telas médias */
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-sections-grid {
+    grid-template-columns: repeat(3, 1fr); /* Três colunas para telas grandes */
+  }
 }
